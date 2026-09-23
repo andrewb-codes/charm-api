@@ -17,8 +17,8 @@ Thumbs.db
 
 # Local config / secrets
 .env
-.backup.env
-deploy/.backup.env
+.env.*
+!.env.example
 back/src/main/resources/application-local.yml
 back/src/main/resources/application-*.local.yml
 back/src/main/resources/application-*.secret.yml
