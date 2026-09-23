@@ -1,0 +1,21 @@
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: ""
+
+app:
+  jwt:
+    secret: MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDE=
+
+  refresh-token:
+    ttl: 30d
+
+  storage:
+    endpoint: https://s3.test.invalid
+    region: test-region
+    bucket: test-bucket
+    access-key: test-access-key
+    secret-key: test-secret-key
+    download-url-ttl: 15m

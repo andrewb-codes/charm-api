@@ -1,6 +1,6 @@
-.git
-.gitignore
+target
 .idea
-.smarttomcat
-**/target
+.git
 .env
+*.iml
+.DS_Store

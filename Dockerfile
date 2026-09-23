@@ -3,22 +3,20 @@ FROM maven:3.9.11-eclipse-temurin-21 AS build
 WORKDIR /build
 
 COPY pom.xml .
-COPY .mvn .mvn
-COPY mvnw .
-COPY mvnw.cmd .
-COPY back/pom.xml back/pom.xml
-COPY linecount-maven-plugin/pom.xml linecount-maven-plugin/pom.xml
-COPY back/src back/src
-COPY linecount-maven-plugin/src linecount-maven-plugin/src
+RUN mvn dependency:go-offline
 
-RUN mvn -pl back -am clean package -DskipTests
+COPY src ./src
+RUN mvn package -DskipTests
+
 
 FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-COPY --from=build /build/back/target/back-1.0-SNAPSHOT.war app.war
+COPY --from=build /build/target/charm-api-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/app/app.war"]
+USER 10001
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

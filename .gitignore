@@ -1,24 +1,38 @@
-# IDE
-.idea/
-*.iml
-.vscode/
-.smarttomcat/
-
-# Build
+HELP.md
 target/
-out/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 build/
-.gradle/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# OS / logs
-*.log
-.DS_Store
-Thumbs.db
+### VS Code ###
+.vscode/
 
-# Local config / secrets
+### ENV files ###
 .env
 .env.*
 !.env.example
-back/src/main/resources/application-local.yml
-back/src/main/resources/application-*.local.yml
-back/src/main/resources/application-*.secret.yml

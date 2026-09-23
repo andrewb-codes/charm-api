@@ -1,3 +1,0 @@
-services:
-  app:
-    image: andrewbcodes/charm-back:${APP_IMAGE_TAG:-latest}
