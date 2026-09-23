@@ -61,7 +61,7 @@ class RefreshTokenRepositoryTest
                 )
         );
 
-        Instant revokedAt = Instant.now();
+        Instant revokedAt = Instant.parse("2025-01-01T12:00:00.123456Z");
 
         token.revoke(revokedAt);
         refreshRepository.saveAndFlush(token);
